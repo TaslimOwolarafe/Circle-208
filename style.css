@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 10px 30px;
+    padding: 20px 30px;
 }
 
 .nav-container {
@@ -44,6 +44,10 @@ ul, li {
     background-color: rgb(78, 70, 60);
     display: block;
     cursor: pointer;
+}
+
+span {
+    height: fit-content;
 }
 
 #mobile-menu {
@@ -72,7 +76,7 @@ ul, li {
 
 .nav-menu.active {
     position: absolute;
-    right: 50px;
+    right: 20px;
     top: 50px;
     display: block;
     z-index: 33;
@@ -98,7 +102,7 @@ a {
 }
 
 .hero-section {
-    margin: 20px auto;
+    margin: 80px auto 20px;
     text-align: center;
 }
 
@@ -163,6 +167,13 @@ a {
 }
 
 @media screen and (max-width: 600px) {
+    .hero-section {
+        margin-top: 120px;
+    }
+
+    .main {
+        margin-top: 60px;
+    }
     #submit {
         display: block;
         width: 450px;
@@ -174,5 +185,14 @@ a {
         justify-content: center;
     }
 
+}
 
+@media screen and (max-width: 500px) {
+    #submit {
+        width: 350px;
+    }
+
+    #phone-number {
+        width: 300px;
+    }
 }
