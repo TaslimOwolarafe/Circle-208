@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.body-wrap {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 30px;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: red;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(78, 70, 60);
+    display: block;
+    cursor: pointer;
+}
+
+#mobile-menu {
+    transform: translate(5%, 20%);
+}
+
+#mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu {
+    display: none;
+    border: none;
+    border-radius: 5px;
+    background: rgb(78, 70, 60);
+    padding: 10px 25px;
+}
+
+.nav-menu.active {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    display: block;
+    z-index: 33;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.members-toggle {
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.members {
+    display: flex;
+}
+
+.circle-208 {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.hero-section h1 {
+    color: rgb(78, 70, 60);
+    margin-bottom: 15px;
+}
+
+.hero-section h4 {
+    color: rgb(78, 70, 60);
+    font-weight: 400;
+}
+
+.main {
+    margin: 30px auto;
+    padding: auto;
+    display: flex;
+    align-items: center;
+}
+
+#phone-form {
+    display: flex;
+    align-items: center;
+}
+
+.service-provider {
+    align-self: center;
+    border-radius: 6px;
+    border: 3px red solid;
+    border-right: none;
+    width: 50px;
+    height: 50px;
+}
+.service-provider img {
+    width: 100%;
+    height: 100%;
+}
+
+#phone-number {
+    height: 50px;
+    width: 400px;
+    border: 3px solid red;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: large;
+    outline: none;
+}
+
+#submit {
+    margin-left: 5px;
+    height: 50px;
+    color: #fff;
+    background: red;
+    font-size: large;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+}
+
+.fa-solid {
+    height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    #submit {
+        display: block;
+        width: 450px;
+        margin-top: 10px;
+    }
+
+    #phone-form {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+}
