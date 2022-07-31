@@ -5,6 +5,10 @@
     font-family: 'Kumbh Sans', sans-serif;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .body-wrap {
     width: 100%;
     background: #fff;
@@ -149,6 +153,7 @@ a {
     padding: 10px 20px;
     font-size: large;
     outline: none;
+    position: relative;
 }
 
 #submit {
@@ -165,6 +170,39 @@ a {
 .fa-solid {
     height: 100%;
 }
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 320px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 100px;
+    overflow-x: hidden;
+    width: 450px;
+    
+}
+
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+  }
+  .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
 
 @media screen and (max-width: 600px) {
     .hero-section {
@@ -185,6 +223,10 @@ a {
         justify-content: center;
     }
 
+    .autocomplete-items {
+        top: 390px;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -195,4 +237,13 @@ a {
     #phone-number {
         width: 300px;
     }
+
+    .autocomplete-items {
+        width: 80%;
+    }
 }
+
+
+
+
+
