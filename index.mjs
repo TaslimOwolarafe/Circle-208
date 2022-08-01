@@ -64,6 +64,7 @@ class Contributor {
 }
 
 const contributors = [
+<<<<<<< HEAD
   new Contributor("Taslim Owolarafe", 
   "owolarafetaslim@gmail.com",
   "https://github.com/TaslimOwolarafe"),
@@ -82,11 +83,27 @@ for (let contributor of contributors) {
 }
 
 
+=======
+    new Contributor("Taslim Owolarafe", 
+    "owolarafetaslim@gmail.com",
+    "https://github.com/TaslimOwolarafe"),
+    
+    new Contributor("Esther Ibeh", "")
+
+]
+
+async function getData(url) {
+    const response = await fetch(url);
+    const result = await response.json();
+    return result;
+}
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
 
 function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formProps = Object.fromEntries(formData)["phone-number"];
+<<<<<<< HEAD
     console.log(formProps);
 
   if (!acceptedProviders.includes(formProps.slice(1, 4)))   {
@@ -95,7 +112,12 @@ function handleSubmit(e) {
 
   }
     
+=======
+    // console.log(formProps);
+
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
     for (let network of networkProv) {
+
         for (let pre of network.prefs) {
             if (formProps.slice(0, 4) == +234) {
                 if (formProps.slice(4, 7) == pre) {
@@ -106,11 +128,21 @@ function handleSubmit(e) {
             else if (formProps.slice(1, 4) == pre ) {
                 console.log(network.name);
                 document.getElementById("network-img").src = `${network.logo}`
+<<<<<<< HEAD
             } else {
 							
 						}
+=======
+            }
         }
+
+        if (null) {
+            break;
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
+        }
+        
     }
+
   }
 
 
@@ -119,6 +151,13 @@ const numForm = document.getElementById("phone-form");
 numForm.addEventListener("submit", handleSubmit);
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
 function autocomplete(inp, arr) {
     var currentFocus;
     inp.addEventListener("input", function(e) {
@@ -146,10 +185,13 @@ function autocomplete(inp, arr) {
             a.appendChild(b);
           }
         }
+<<<<<<< HEAD
 
 			if (a.childNodes.length == 0) {
 			a.style.height = "fit-content"
 		}
+=======
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
     });
     inp.addEventListener("keydown", function(e) {
         var x = document.getElementById(this.id + "autocomplete-list");
@@ -194,11 +236,26 @@ function autocomplete(inp, arr) {
   }
 
 
+<<<<<<< HEAD
+=======
+var prefixes = [
+    708, 802, 808, 812, 701, 902,
+    705, 805, 811, 807, 815, 905,
+    809, 817, 818, 909,
+    703, 706, 803, 806,
+    810, 813, 816, 814, 903
+]
+
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
 var allPrefixes = [
     
 ]
 
+<<<<<<< HEAD
 for (let num of acceptedProviders) {
+=======
+for (let num of prefixes) {
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
     allPrefixes.push(`+234${num}`);
     allPrefixes.push(`0${num}`);
 }
