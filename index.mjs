@@ -3,12 +3,12 @@ import startApp from './app.mjs';
 document.addEventListener('DOMContentLoaded', startApp); 
 
 
-// function result() {
-//     var resultData = document.getElementById("phone-number").value;
-//     console.log(resultData);
-// }
-const menu = document.querySelector('#mobile-menu')
-const menuLinks = document.querySelector('.nav-menu')
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.nav-menu');
+const notFound = document.querySelector('.not-found');
+const contributorsList = document.querySelector('.circle-208');
+
+var acceptedProviders = [703, 706, 803, 806, 810, 813, 816, 814, 903, 809, 817, 818, 909, 705, 805, 811, 807, 815, 905, 708, 802, 808, 812, 701, 902]
 
 menu.addEventListener('click', function(){
     menu.classList.toggle('is-active');
@@ -64,6 +64,26 @@ class Contributor {
 }
 
 const contributors = [
+<<<<<<< HEAD
+  new Contributor("Taslim Owolarafe", 
+  "owolarafetaslim@gmail.com",
+  "https://github.com/TaslimOwolarafe"),
+  new Contributor("Motunrayo Ilawole",       
+  "tunrayoilawole99@gmail.com", 
+  "https://github.com/TunrayoIlawole")
+
+]
+
+for (let contributor of contributors) {
+    contributorsList.innerHTML += `      
+    <li class="members"> 
+        <h5>${contributor.name}</h5>                    
+        <a href="${contributor.github}" class="github-link"><i class="fa-brands fa-github"></i></a>
+    </li>`;
+}
+
+
+=======
     new Contributor("Taslim Owolarafe", 
     "owolarafetaslim@gmail.com",
     "https://github.com/TaslimOwolarafe"),
@@ -77,13 +97,25 @@ async function getData(url) {
     const result = await response.json();
     return result;
 }
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
 
 function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const formProps = Object.fromEntries(formData)["phone-number"];
+<<<<<<< HEAD
+    console.log(formProps);
+
+  if (!acceptedProviders.includes(formProps.slice(1, 4)))   {
+    notFound.classList.add('show');
+    document.getElementById("network-img").src = `https://i.pinimg.com/736x/47/fa/6d/47fa6d9454b031cdb3b8774273c20adf.jpg`;
+
+  }
+    
+=======
     // console.log(formProps);
 
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
     for (let network of networkProv) {
 
         for (let pre of network.prefs) {
@@ -96,11 +128,17 @@ function handleSubmit(e) {
             else if (formProps.slice(1, 4) == pre ) {
                 console.log(network.name);
                 document.getElementById("network-img").src = `${network.logo}`
+<<<<<<< HEAD
+            } else {
+							
+						}
+=======
             }
         }
 
         if (null) {
             break;
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
         }
         
     }
@@ -113,10 +151,13 @@ const numForm = document.getElementById("phone-form");
 numForm.addEventListener("submit", handleSubmit);
 
 
+<<<<<<< HEAD
+=======
 
 
 
 
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
 function autocomplete(inp, arr) {
     var currentFocus;
     inp.addEventListener("input", function(e) {
@@ -144,6 +185,13 @@ function autocomplete(inp, arr) {
             a.appendChild(b);
           }
         }
+<<<<<<< HEAD
+
+			if (a.childNodes.length == 0) {
+			a.style.height = "fit-content"
+		}
+=======
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
     });
     inp.addEventListener("keydown", function(e) {
         var x = document.getElementById(this.id + "autocomplete-list");
@@ -188,6 +236,8 @@ function autocomplete(inp, arr) {
   }
 
 
+<<<<<<< HEAD
+=======
 var prefixes = [
     708, 802, 808, 812, 701, 902,
     705, 805, 811, 807, 815, 905,
@@ -196,11 +246,16 @@ var prefixes = [
     810, 813, 816, 814, 903
 ]
 
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
 var allPrefixes = [
     
 ]
 
+<<<<<<< HEAD
+for (let num of acceptedProviders) {
+=======
 for (let num of prefixes) {
+>>>>>>> 379aa453ddf3b406176d3632946948cdd5a92112
     allPrefixes.push(`+234${num}`);
     allPrefixes.push(`0${num}`);
 }

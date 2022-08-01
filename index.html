@@ -21,14 +21,7 @@
                     <h3 class="members-toggle">Contributors</h3>
                     <li class="contributors">
                         <ul class="circle-208">
-                            <li class="members"> 
-                                <h5>Taslim Owolarafe</h65>                    
-                                    <a href="" class="github-link"><i class="fa-brands fa-github"></i></a>
-                            </li>
-                            <li class="members"> 
-                                <h5>Group Member</h65>                    
-                                <a href="" class="github-link"><i class="fa-brands fa-github"></i></a>
-                            </li>
+                            
                         </ul>
                     </li>                    
                 </ul>
@@ -51,9 +44,12 @@
                 <form action="" id="phone-form">
                     <!-- <label for="phone-number">Phone Number</label> -->
                     <span class="service-provider"><img src="https://cdn.vectorstock.com/i/1000x1000/95/74/network-signal-icon-vector-19399574.webp" alt="network" id="network-img"></span>
-                    <input name="phone-number" id="phone-number" type="text" placeholder="Enter a phone number">
+                    <input name="phone-number" id="phone-number" type="text" placeholder="Enter a phone number" pattern="((^+)(234){1}[0–9]{10})|((^234)[0–9]{10})|((^0)(7|8|9){1}(0|1){1}[0–9]{8})" inputmode="numeric">
                     <input type="submit" name="submit" id="submit">
                 </form>
+            </div>
+            <div class="not-found">
+              <p>Sorry, this number cannot be identified. Please try again</p>
             </div>
         </div>
 
