@@ -134,13 +134,16 @@ function handleSubmit(e) {
             else if (formProps.slice(1, 4) == pre ) {
                 console.log(network.name);
                 document.getElementById("network-img").src = `${network.logo}`
+
             } else {
               errorMessage.classList.toggle('show')
+
             }
         }
 
         if (null) {
             break;
+
         }
         
     }
@@ -169,7 +172,7 @@ function autocomplete(inp, arr) {
         a.setAttribute("class", "autocomplete-items");
         this.parentNode.insertBefore(a, document.querySelector("#submit"));
         for (i = 0; i < arr.length; i++) {
-          console.log(arr[i]);
+//           console.log(arr[i]);
             var num1 = String(arr[i])
             
           if (num1.slice(0, val.length) == val) {
@@ -184,6 +187,7 @@ function autocomplete(inp, arr) {
             a.appendChild(b);
           }
         }
+
         if (a.childNodes.length == 0) {
           a.style.height = "fit-content"
         }
@@ -248,6 +252,6 @@ for (let num of prefixes) {
     allPrefixes.push(`+234${num}`);
     allPrefixes.push(`0${num}`);
 }
-
+// console.log(allPrefixes)
 
 autocomplete(document.getElementById("phone-number"), allPrefixes);

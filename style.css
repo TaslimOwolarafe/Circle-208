@@ -183,13 +183,23 @@ a {
     height: 100%;
 }
 
+.not-found {
+    margin-top: 40px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.not-found.show {
+    visibility: visible;
+}
+
+
 .autocomplete-items {
     position: absolute;
     border: 1px solid #d4d4d4;
     border-bottom: none;
     border-top: none;
     z-index: 99;
-    /*position the autocomplete items to be the same width as the container:*/
     top: 320px;
     left: 0;
     right: 0;
@@ -207,14 +217,13 @@ a {
     border-bottom: 1px solid #d4d4d4;
   }
   .autocomplete-items div:hover {
-    /*when hovering an item:*/
     background-color: #e9e9e9;
   }
   .autocomplete-active {
-    /*when navigating through the items using the arrow keys:*/
     background-color: DodgerBlue !important;
     color: #ffffff;
   }
+
 
 .not-found {
     margin-top: 5px;
@@ -225,6 +234,7 @@ a {
 .not-found.show {
     visibility: visible;
 }
+
 
 @media screen and (max-width: 600px) {
     .hero-section {
@@ -245,7 +255,7 @@ a {
         justify-content: center;
     }
 
-    .autocomplete-items {
+	.autocomplete-items {
         top: 390px;
     }
 
@@ -260,12 +270,7 @@ a {
         width: 300px;
     }
 
-    .autocomplete-items {
+	.autocomplete-items {
         width: 80%;
     }
 }
-
-
-
-
-
