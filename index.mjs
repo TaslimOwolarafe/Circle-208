@@ -9,11 +9,24 @@ document.addEventListener('DOMContentLoaded', startApp);
 // }
 const menu = document.querySelector('#mobile-menu')
 const menuLinks = document.querySelector('.nav-menu')
+const notFound = document.querySelector('.not-found');
+const contributorsList = document.querySelector('.circle-208');
+const errorMessage = document.querySelector('.not-found')
 
 menu.addEventListener('click', function(){
     menu.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
 });
+
+function removePopup(obj) {
+  obj.addEventListener('click', ()=> {
+    menu.classList.remove('active');
+    menuLinks.classList.remove('active');
+  })
+}
+
+removePopup(document.querySelector('.hero-section'));
+removePopup(document.querySelector('.main'))
 
 
 const networkProv = [
@@ -56,7 +69,7 @@ const networkProv = [
 ]
 
 class Contributor {
-    constructor(name, email, github) {
+    constructor(name, email, github="https://github.com") {
         this.name = name,
         this.github = github,
         this.email = email
@@ -67,10 +80,35 @@ const contributors = [
     new Contributor("Taslim Owolarafe", 
     "owolarafetaslim@gmail.com",
     "https://github.com/TaslimOwolarafe"),
-    
-    new Contributor("Esther Ibeh", "")
-
-]
+    new Contributor("Motunrayo Ilawole",       
+    "tunrayoilawole99@gmail.com", 
+    "https://github.com/TunrayoIlawole"),
+    new Contributor("Chigozie Ogbonna", 
+    "ogbonnachigozieben@gmail.com",
+    "https://github.com/Sleeksmart21"),
+    new Contributor("Gloria Solomon",
+    "mailto:Rwandagloria@gmail.com?"),
+    new Contributor("Chinecherem Ugwuanyi",
+    "mailto:chi2054real@gmail.com"),
+    new Contributor("Baba Aliyu",
+    "mailto:reclickbaba@gmail.com")
+  
+  ]
+  
+  
+  for (let contributor of contributors) {
+    var memberLink = contributor.github
+    var icon = "<i class='fa-brands fa-github'>"
+    if (contributor.github == 'https://github.com') {
+      memberLink = contributor.email
+      icon = "<i class='fa-solid fa-envelope'></i>"
+    }
+      contributorsList.innerHTML += `      
+      <li class="members"> 
+          <h5>${contributor.name}</h5>                    
+          <a href="${memberLink}" class="github-link">${icon}</i></a>
+      </li>`;
+  }
 
 async function getData(url) {
     const response = await fetch(url);
@@ -96,6 +134,8 @@ function handleSubmit(e) {
             else if (formProps.slice(1, 4) == pre ) {
                 console.log(network.name);
                 document.getElementById("network-img").src = `${network.logo}`
+            } else {
+              errorMessage.classList.toggle('show')
             }
         }
 
@@ -144,8 +184,12 @@ function autocomplete(inp, arr) {
             a.appendChild(b);
           }
         }
+        if (a.childNodes.length == 0) {
+          a.style.height = "fit-content"
+        }
     });
     inp.addEventListener("keydown", function(e) {
+        errorMessage.classList.remove('show')
         var x = document.getElementById(this.id + "autocomplete-list");
         if (x) x = x.getElementsByTagName("div");
         if (e.keyCode == 40) {
@@ -204,6 +248,6 @@ for (let num of prefixes) {
     allPrefixes.push(`+234${num}`);
     allPrefixes.push(`0${num}`);
 }
-console.log(allPrefixes)
+
 
 autocomplete(document.getElementById("phone-number"), allPrefixes);
