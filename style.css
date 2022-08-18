@@ -183,15 +183,7 @@ a {
     height: 100%;
 }
 
-.not-found {
-    margin-top: 40px;
-    text-align: center;
-    visibility: hidden;
-}
 
-.not-found.show {
-    visibility: visible;
-}
 
 
 .autocomplete-items {
